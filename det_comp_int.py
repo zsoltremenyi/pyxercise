@@ -3,10 +3,32 @@ from tkinter import *
 from tkinter import ttk
 
 root = Tk()
+root.geometry("400x350")
 frame = ttk.Frame(root, padding=10)
 frame.grid()
 ttk.Label(frame, text="Hello World!").grid(column=0, row=0)
 ttk.Button(frame, text="Quit", command=root.destroy).grid(column=1, row=0)
+
+ttk.Label(frame, text='amount').grid(column=0, row=1, pady=10, padx=10)
+amount = Entry(frame, width=20)
+#amount.insert(0, int(input()))
+amount.grid(column=1, row=1)
+
+ttk.Label(frame, text='rate').grid(column=0, row=2, pady=10, padx=10)
+rate = Entry(frame, width=20)
+#rate.insert(0, 'rate')
+rate.grid(column=1, row=2)
+
+ttk.Label(frame, text='years').grid(column=0, row=3, pady=10, padx=10)
+rate = Entry(frame, width=20)
+#rate.insert(0, 'rate')
+rate.grid(column=1, row=3)
+
+ttk.Label(frame, text='compound per year').grid(column=0, row=4, pady=10, padx=10)
+rate = Entry(frame, width=20)
+#rate.insert(0, 'rate')
+rate.grid(column=1, row=4)
+
 root.mainloop()
 
 # def compound_interest(amount, rate, years, comperyear):
