@@ -10,7 +10,8 @@ title = ttk.Label(frame, text="Determining Compound Interest")
 title.grid(row=0, column=0, columnspan=2, padx=100, pady=20)
 
 
-ttk.Button(frame, text="Quit", command=root.destroy).grid(column=0, row=6, columnspan=2)
+quit = ttk.Button(frame, text="Quit", command=root.destroy).grid(column=1, row=6, pady=10)
+calculate = ttk.Button(frame, text="Calculate", command="").grid(column=0, row=6, pady=10)
 
 ttk.Label(frame, text='amount').grid(column=0, row=1, pady=10, padx=10)
 amount = Entry(frame, width=20)
