@@ -6,8 +6,11 @@ root = Tk()
 root.geometry("400x350")
 frame = ttk.Frame(root, padding=10)
 frame.grid()
-ttk.Label(frame, text="Hello World!").grid(column=0, row=0)
-ttk.Button(frame, text="Quit", command=root.destroy).grid(column=1, row=0)
+title = ttk.Label(frame, text="Determining Compound Interest")
+title.grid(row=0, column=0, columnspan=2, padx=100, pady=20)
+
+
+ttk.Button(frame, text="Quit", command=root.destroy).grid(column=0, row=6, columnspan=2)
 
 ttk.Label(frame, text='amount').grid(column=0, row=1, pady=10, padx=10)
 amount = Entry(frame, width=20)
