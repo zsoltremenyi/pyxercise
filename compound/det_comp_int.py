@@ -1,7 +1,6 @@
-import math
 from tkinter import *
 from tkinter import ttk
-from calculation import compound_interest
+from git_project.pyxercise.compound.calculation import compound_interest
 
 root = Tk()
 root.geometry("400x350")
@@ -39,7 +38,7 @@ sumup.grid(column=0, row=6, columnspan=2)
 ttk.Button(frame, text="Quit", command=root.destroy).grid(column=1, row=7, pady=10)
 
 
-calculate = ttk.Button(frame, text="Calculate", command=lambda: sumup.insert(0, compound_interest(amount.get(),rate.get(),years.get(),cpy.get()))).grid(column=0, row=7, pady=10)
+ttk.Button(frame, text="Calculate", command=lambda: [sumup.delete(0, END), sumup.insert(0, compound_interest(amount.get(),rate.get(),years.get(),cpy.get()))]).grid(column=0, row=7, pady=10)
 
 
 
