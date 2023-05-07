@@ -3,6 +3,7 @@ from tkinter import ttk
 from calculation import compound_interest
 from reset_function import del_func, insert_func
 
+
 root = Tk()
 root.geometry("400x350")
 frame = ttk.Frame(root, padding=10)
@@ -22,6 +23,7 @@ rate = Entry(frame, width=20)
 rate.grid(column=1, row=2)
 rate.insert(0,0)
 
+
 ttk.Label(frame, text='years').grid(column=0, row=3, pady=10, padx=10)
 years = Entry(frame, width=20)
 years.grid(column=1, row=3)
@@ -37,6 +39,7 @@ sumup = Entry(frame, width=20)
 sumup.grid(column=0, row=6, columnspan=2)
 sumup.insert(0,0)
 
+
 quitting = ttk.Button(frame, text="Quit", command=root.destroy)
 quitting.grid(column=1, row=7, pady=10)
 
@@ -46,6 +49,13 @@ calculate.grid(column=0, row=7, pady=10)
 
 
 reset = ttk.Button(frame, text="Reset", command=lambda: [del_func(amount, rate, years, cpy, sumup), insert_func(amount, rate, years, cpy, sumup)])
+reset.grid(column=0, row=8, columnspan=2)
+
+
+root.mainloop()
+
+
+reset = ttk.Button(frame, text="Reset", command=lambda: [sumup.delete(0, END), amount.delete(0, END), rate.delete(0, END), years.delete(0, END), cpy.delete(0, END)])
 reset.grid(column=0, row=8, columnspan=2)
 
 
