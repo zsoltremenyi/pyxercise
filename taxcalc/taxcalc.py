@@ -1,5 +1,10 @@
 order_amount = int(input("What is the order amount? "))
 state = input("What is the state? ").lower()
+tax = 0
+
 
 if state == "wi" or state == "wisconsin":
-    print(f'The subtotal is ${order_amount}.\nThe tax is ${order_amount * 0.055}.\nThe total is ${round(order_amount*1.055, 2)}.')
+    tax = 0.055
+    print(f'The subtotal is ${order_amount}.\nThe tax is ${order_amount * tax}.')
+
+print(f"The total is ${round(float(order_amount*(tax+1)), 2)}")
