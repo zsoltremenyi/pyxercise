@@ -51,8 +51,4 @@ else:
         else:
             print(", ".join(country))
         print()
-    # if legal_age_driving > age_of_user:
-    #     print("You are not old enough to legally drive.")
-    # else:
-    #     print("You are old enough to legally drive.")
 
