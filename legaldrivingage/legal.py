@@ -41,12 +41,16 @@ except (ValueError, AssertionError):
     print("The input is not valid. Please enter valid number.")
 else:
     for continent in legal_age_driving:
-        allowed_to_drive = []
-        print(continent)
+        print(continent, ":")
+        country = []
         for key, value in legal_age_driving[continent].items():
             if age_of_user >= int(value):
-                allowed_to_drive.append(key)
-        print(allowed_to_drive)
+                country.append(key)
+        if len(country) == 0:
+            print(f"You are not allowed to drive anywhere at the age of {age_of_user}")
+        else:
+            print(", ".join(country))
+        print()
     # if legal_age_driving > age_of_user:
     #     print("You are not old enough to legally drive.")
     # else:
