@@ -1,1 +1,19 @@
+import calculator
 
+blood_alcohol_content = 0.08
+
+try:
+    A = float(input("Total alcohol consumed, in oz: "))
+    W = float(input("Bodyweight in pounds: "))
+    r = input("Gender for alcohol distribution ratio ('m' male, 'f' female): ")
+    H = float(input("Number of minutes since the last drink: "))
+
+
+except ValueError:
+    print("Please input valid value")
+
+
+else:
+    print(calculator.b_alc_calc(A,W,r,H))
+
+# 12 floz beer = 8-9 floz malt liqour == 5floz red wine = 1.5 floz 80proof
