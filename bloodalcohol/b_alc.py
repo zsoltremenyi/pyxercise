@@ -5,16 +5,12 @@ import pandas as pd
 
 site = requests.get(url="http://iardwebprod.azurewebsites.net/science-resources/detail/Blood-Alcohol-Concentration-(BAC)-Limits")
 soup = bs(site.content, features="html.parser")
-class_list = set()
-tags = {tag.name for tag in soup.find_all() }
-print(tags)
-for tag in tags:
+table_rows = soup.find_all("tr")
+countries = [n.splitlines() for n in [i.text.strip() for i in table_rows]]
+country_dict = {countries[something][0]:countries[something][1] for something in range(1, len(countries))}
+print(country_dict)
 
-    for i in soup.find_all(tag):
-        if i.has_attr("class"):
-            if len(i['class']) != 0:
-                class_list.add(" ". join(i['class']))
-print(class_list)
+
 # no official BAC is defined, but it is prohibited to drive under the inluence of alcohol.
 # different rules apply to proffessional drivers professional drivers
 country_alcohol = {}
