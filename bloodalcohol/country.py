@@ -18,7 +18,8 @@ class Country:
 
     def get_bac(self):
         for k, v in self.get_dict_countries().items():
-            if k == self.country:
+            #if k == self.country:
+            if self.country in k:
                 try:
                     float(v)
                 except:
@@ -26,8 +27,8 @@ class Country:
                 else:
                     self.bac = round(self.bac, 2)
                     if self.bac <= float(v):
-                        return f"You are allowed to drive in {k} the limit of 'bac' is {v}, your level is {self.bac} " \
-                               f"but strongly recommended not to. The above stated only apply to non-professional drivers."
+                        return f"You are allowed to drive in {k} - the limit of 'bac' is {v}, your level is {self.bac} - " \
+                               f",but strongly recommended not to. The above stated only apply to non-professional drivers."
 
                     else:
                         return f"You are not allowed to drive. The limit is {v}, your 'BAC' is {self.bac}"
