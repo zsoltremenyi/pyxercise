@@ -1,11 +1,12 @@
 import calculator
-
+from country import Country
 import pandas as pd
 
 
 
 
 # different rules apply to proffessional drivers professional drivers
+
 country_alcohol = {}
 
 blood_alcohol_content = 0.08
@@ -23,6 +24,7 @@ except ValueError:
 
 
 else:
-    print(calculator.b_alc_calc(A,W,r,H))
+    country = Country(country_of_interest, calculator.b_alc_calc(A,W,r,H))
+    print(country.get_bac())
 
 # 12 floz beer = 8-9 floz malt liqour == 5floz red wine = 1.5 floz 80proof
