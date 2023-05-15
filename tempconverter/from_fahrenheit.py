@@ -8,4 +8,4 @@ class Fahrenheit:
 
     def fh_to_k(self):
         kelvin = (self.fahrenheit-32) * 5/9 + 273.15
-        return f"{self.fahrenheit} Fahrenhiet is {kelvin} Kelvin."
+        return f"{self.fahrenheit} Fahrenhiet is {round(kelvin, 2)} Kelvin."
