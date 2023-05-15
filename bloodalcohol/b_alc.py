@@ -28,4 +28,3 @@ else:
     print(country.get_dict_countries())
     print(country.get_bac())
 
-# 12 floz beer = 8-9 floz malt liqour == 5floz red wine = 1.5 floz 80proof
