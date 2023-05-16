@@ -10,32 +10,26 @@ desired_temp = input("Press C to convert to Celsius.\n"
                      "Press F to convert from Fahrenheit.\n"
                      "Press K to convert from Kelvin. ")
 
-if choice_temp.lower() == "c" and desired_temp.lower() == "f":
+
+if choice_temp.lower() == 'c':
     c = int(input("Please enter the temperature in celsius: "))
-    cels_to_fahr = Celsius(c)
-    print(cels_to_fahr.c_to_fh())
+    if desired_temp.lower() == 'f':
+        print(Celsius(c).c_to_fh())
+    elif desired_temp.lower() == 'k':
+        print(Celsius(c).c_to_k())
 
-elif choice_temp.lower() == "c" and desired_temp.lower() == "k":
-    c = int(input("Please enter the temperature in celsius: "))
-    cels_to_kelv = Celsius(c)
-    print(cels_to_kelv.c_to_k())
 
-elif choice_temp.lower() == "f" and desired_temp.lower() == "c":
+elif choice_temp.lower() == "f":
     f = int(input("Please enter the temperature in fahrenheit: "))
-    fahr_to_cels = Fahrenheit(f)
-    print(fahr_to_cels.fh_to_c())
+    if desired_temp.lower() == "c":
+        print(Fahrenheit(f).fh_to_c())
+    elif desired_temp.lower() == "k":
+        print(Fahrenheit(f).fh_to_k())
 
-elif choice_temp.lower() == "f" and desired_temp.lower() == "k":
-    f = int(input("Please enter the temperature in fahrenheit: "))
-    fahr_to_k = Fahrenheit(f)
-    print(fahr_to_k.fh_to_k())
 
-elif choice_temp.lower() == "k" and desired_temp.lower() == "c":
+elif choice_temp.lower() == "k":
     k = int(input("Please enter the temperature in kelvin: "))
-    kel_to_cels = Kelvin(k)
-    print(kel_to_cels.kelv_to_celsius())
-
-elif choice_temp.lower() == "k" and desired_temp.lower() == "f":
-    k = int(input("Please enter the temperature in kelvin: "))
-    kel_to_cels = Kelvin(k)
-    print(kel_to_cels.kelv_to_fahrenheit())
+    if desired_temp.lower() == "c":
+        print(Kelvin(k).kelv_to_celsius())
+    elif desired_temp.lower() == "f":
+        print(Kelvin(k).kelv_to_fahrenheit())
