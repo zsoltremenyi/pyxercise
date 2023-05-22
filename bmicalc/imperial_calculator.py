@@ -1,4 +1,4 @@
-def imp_calc(weight, height):
+def impbmi_calc(weight, height):
     bmi = (weight/(height*height)) * 703
     return bmi
 
