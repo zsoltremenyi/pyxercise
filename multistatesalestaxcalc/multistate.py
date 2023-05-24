@@ -13,9 +13,11 @@ state_finder = State(state.upper())
 if state_finder.full_name():
     calc = Calculator(order_amount, state_finder.full_name())
     print(calc.calculator())
-elif state in states.state_and_tax:
+elif state in states.state_and_tax.keys():
     calc = Calculator(order_amount, state)
     print(calc.calculator())
+else:
+    print("Check input: only full name of state or postal abbriviation")
 
 
 
