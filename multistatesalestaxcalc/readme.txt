@@ -9,3 +9,8 @@ Ensure that all money is rounded up to the nearest cent
 Allow the user to enter a state abbreviation
 Allow the user to also enter the state’s full name in
 upper, lower, or mixed case.
+
+used: - bs4 for State - Tax
+      - api for State name - State abbriviation
+      - modules/classes
+      -simple if/else
