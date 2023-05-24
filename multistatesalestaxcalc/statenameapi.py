@@ -28,5 +28,3 @@ class State:
 			if value == self.abbr:
 				return key
 
-state = State("CA")
-print(state.full_name())
