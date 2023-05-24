@@ -10,4 +10,4 @@ class Calculator:
 
     def calculator(self):
         tax = float(self.salestax_dict[self.state])
-        return round(self.amount*(1+tax))
+        return round(self.amount*(1+tax/100), 2)
