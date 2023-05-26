@@ -12,4 +12,3 @@ table_rows = soup.find_all('tr')
 
 states = [n.splitlines() for n in [i.text.strip() for i in table_rows]]
 state_and_tax = {re.sub(" \(.\)", "", i[0].replace(u"\xa0", u" ")):i[1].replace("%", "") for i in states[1:-1]}
-print(state_and_tax)
