@@ -15,7 +15,6 @@ except:
 
 else:
     state_finder = State(state.upper())
-
     if state_finder.full_name():
         calc = Calculator(order_amount, state_finder.full_name())
         print(f"The tax is ${calc.tax_amount()}.\nThe total is ${calc.calculator()}.")
