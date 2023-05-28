@@ -24,6 +24,6 @@ class Translation():
         try:
             translated_output = self.translator.translate(f'The name of the month is {month[number]}.')
         except KeyError as ke:
-            return "KeyError: " + str(ke) + " is not a valid number (1-12). "
+            return self.translator.translate("KeyError: " + str(ke) + " is not a valid number (1-12). ")
         else:
             return translated_output
