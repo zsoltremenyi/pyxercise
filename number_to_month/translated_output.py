@@ -10,6 +10,18 @@ value_list = list(language.values())
 
 
 class Translation():
+    """
+    A class that handles translation of month numbers to names in different languages.
+
+    args:
+        prompt (str): The language prompt provided by the user.
+
+    attributes:
+        prompt (str): The language prompt provided by the user.
+        chosen_lang: The language code chosen based on the user prompt.
+        translator (Translator): The translation object for the chosen language.
+    """
+
     def __init__(self,prompt):
         self.prompt = prompt
         self.chosen_lang = key_list[value_list.index(prompt)]
@@ -24,6 +36,6 @@ class Translation():
         try:
             translated_output = self.translator.translate(f'The name of the month is {month[number]}.')
         except KeyError as ke:
-            return self.translator.translate("KeyError: " + str(ke) + " is not a valid number (1-12). ")
+            raise ValueError(f"{number} is not a valid number (1-12).") from ke
         else:
             return translated_output
