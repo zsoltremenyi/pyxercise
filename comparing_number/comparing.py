@@ -1,15 +1,15 @@
-first = int(input("Enter the first number: "))
-second = int(input("Enter the second number: "))
-third = int(input("Enter the third number: "))
+from largestnum import largest_num
 
-num_list = [first, second, third]
-largest_num = 0
 
-for i in num_list:
-    if not largest_num:
-        largest_list = i
-    elif largest_num < int(i):
-        largest_num = int(i)
+num_set = set()
+flag = True
 
-print(largest_num)
+while flag:
+    something = input("Enter a number, when done enter 'q': ")
+    if something == 'q':
+        flag = False
+    else:
+        num_set.add(something)
 
+
+print(largest_num(num_set))
