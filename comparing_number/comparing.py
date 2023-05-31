@@ -1,20 +1,6 @@
 from largestnum import largest_num
+from num_prompting import prompting
 
-
-num_set = set()
-flag = True
-
-while flag:
-    try:
-        something = int(input("Enter a number: "))
-        exiting = input("If done, press 'q', else press 'enter': ")
-    except ValueError as ve:
-        raise ValueError(f"{ve} not valid, please enter a valid number")
-    else:
-        if exiting == 'q':
-            flag = False
-        else:
-            num_set.add(something)
-
+num_set = prompting()
 
 print(largest_num(num_set))
