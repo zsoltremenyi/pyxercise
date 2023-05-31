@@ -3,5 +3,6 @@ def largest_num(numbers):
     for i in numbers:
         if not largest_num:
             largest_list = i
-        elif max_num < int(i):
-            max_num = int(i)
+        elif max_num < i:
+            max_num = i
+    return max_num
