@@ -5,11 +5,16 @@ num_set = set()
 flag = True
 
 while flag:
-    something = input("Enter a number, when done enter 'q': ")
-    if something == 'q':
-        flag = False
+    try:
+        something = int(input("Enter a number: "))
+        exiting = input("If done, press 'q', else press 'enter': ")
+    except ValueError as ve:
+        raise ValueError(f"{ve} not valid, please enter a valid number")
     else:
-        num_set.add(something)
+        if exiting == 'q':
+            flag = False
+        else:
+            num_set.add(something)
 
 
 print(largest_num(num_set))
