@@ -15,5 +15,6 @@ def prompting():
                 num_set.add(something)
             elif exiting.isalnum() or not exiting.isalnum():
                 print(f"'{exiting}' Wrong character, prompting for next number.")
-
+        set_without_brackets = [str(i) for i in num_set]
+        print(f"Current number(s): {', '.join(set_without_brackets)}")
     return num_set
