@@ -9,6 +9,6 @@ def comparing(first_word, second_word):
             counter += 1
 
     if counter == length[0] and length[0] == length[1]:
-        print(f"{first_word} and {second_word} are anagrams.")
+        return f"{first_word} and {second_word} are anagrams."
     else:
-        print(f"{first_word} and {second_word} are not anagrams.")
+        return f"{first_word} and {second_word} are not anagrams."
