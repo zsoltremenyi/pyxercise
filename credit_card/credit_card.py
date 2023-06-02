@@ -1,9 +1,25 @@
 from calculator import calculateMonthsUntilPaidOff
+from calculator import calculatePaymentForDesireMonth
+import prompts
 
 
-balance = float(input("What is your balance? "))
-card_apr = float(input("What is the APR on the card (as a percent)? "))
-monthly_payment = float(input("What is the monthly payment you can make? "))
+print("Would you like to provide the number of months until pay off, or the amount you would like to pay per month?")
+choosing_option = input("Press 'm' for month, 'a' for monthly amount. ")
 
 
-print(calculateMonthsUntilPaidOff(card_apr, balance, monthly_payment))
+if choosing_option == 'a':
+    try:
+        month_till_payoff = calculateMonthsUntilPaidOff(prompts.card_apr(), prompts.balance(), prompts.monthly_payment())
+    except ValueError:
+        raise "Invalid input"
+    else:
+        print(month_till_payoff)
+elif choosing_option == 'm':
+    try:
+        amount_to_pay_monthly = calculatePaymentForDesireMonth(prompts.card_apr(),prompts.balance(), prompts.month())
+    except ValueError:
+        raise "invalid input"
+    else:
+        print(amount_to_pay_monthly)
+else:
+    print("Invalid input.")
