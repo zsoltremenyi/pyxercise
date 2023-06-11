@@ -4,7 +4,7 @@ def guessing(difficulty, prompt):
         if difficulty == int(prompt):
             counter += 1
             print(f"You got it in {counter} guesses!")
-            break
+            return
         elif difficulty > int(prompt):
             counter += 1
             prompt = input("Too low guess again: ")
