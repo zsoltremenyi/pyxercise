@@ -1,3 +1,6 @@
+from number_of_guesses import comments
+
+
 def guessing(difficulty, prompt):
     counter = 0
     num_list = []
@@ -6,6 +9,7 @@ def guessing(difficulty, prompt):
         if str(difficulty) == str(prompt):
             counter += 1
             print(f"You got it in {counter} guesses!")
+            print(comments(counter))
             return
 
         elif str(difficulty) > str(prompt):
