@@ -1,7 +1,13 @@
 from random import choice
 
-prompt = input("What's your question? ")
+
 answers = ["Yes", "No", "Maybe", "Ask again later"]
 
-print(choice(answers))
+
+while True:
+    prompt = input("What's your question? ")
+    print(choice(answers))
+    more_questions = input("Do you have any more questions? (y, n) ")
+    if more_questions == "n":
+        break
 
