@@ -1,7 +1,8 @@
 import random
 import string
-from random import shuffle
 import pass_list as pl
+import pass_choices as pc
+import pyperclip
 
 letter_list = list(string.ascii_letters)
 spec_list = list(string.punctuation)
@@ -36,9 +37,14 @@ else:
                 min_length -= 1
 
 password = pl.your_pass
+pc.pass_choice(password)
+pass_list = pc.choices
+choosing_pass = input("Which one do you prefer? (1,2,3) \n"
+                      "Your choice will be copied to clipboard.\n")
 
-print("Password choices:")
-for _ in range(3):
-    print("".join(password))
-    shuffle(pl.your_pass)
-
+if choosing_pass == "1":
+    pyperclip.copy(pass_list[0])
+elif choosing_pass == "2":
+    pyperclip.copy(pass_list[1])
+elif choosing_pass == "3":
+    pyperclip.copy(pass_list[2])
