@@ -18,7 +18,7 @@ except ValueError:
     raise ValueError
 
 else:
-    pass_comp = pl.PasswordComp(letter_list, num_list, spec_list, spec_ch, nums)
+    pass_comp = pl.PasswordComp(letter_list, num_list, spec_list)
     while min_length > 0:
         for _ in range(spec_ch):
             pass_comp.specials()
