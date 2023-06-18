@@ -2,7 +2,7 @@ import random
 import string
 import pass_list as pl
 import pass_choices as pc
-import pyperclip
+from copy_password import copying_pass
 
 letter_list = list(string.ascii_letters)
 spec_list = list(string.punctuation)
@@ -39,12 +39,4 @@ else:
 password = pl.your_pass
 pc.pass_choice(password)
 pass_list = pc.choices
-choosing_pass = input("Which one do you prefer? (1,2,3) \n"
-                      "Your choice will be copied to clipboard.\n")
-
-if choosing_pass == "1":
-    pyperclip.copy(pass_list[0])
-elif choosing_pass == "2":
-    pyperclip.copy(pass_list[1])
-elif choosing_pass == "3":
-    pyperclip.copy(pass_list[2])
+copying_pass(pass_list)
