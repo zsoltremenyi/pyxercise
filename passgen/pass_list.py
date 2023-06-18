@@ -5,12 +5,10 @@ your_pass = []
 
 
 class PasswordComp:
-    def __init__(self, letters, numbers, characters, spec_ch, nums):
+    def __init__(self, letters, numbers, characters):
         self.letters = letters
         self.numbers = numbers
         self.characters = characters
-        self.spec_ch = spec_ch
-        self.nums = nums
 
     def specials(self):
         return your_pass.append(choice(self.characters))
